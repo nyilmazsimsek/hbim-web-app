@@ -7,9 +7,23 @@
 	"module": "./source/engine/main.js",
 	"repository": "github:kovacsv/Online3DViewer",
 	"keywords": [
-		"3d", "viewer",
-		"obj", "3ds", "stl", "ply", "gltf", "glb", "off",
-		"3dm", "fbx", "dae", "wrl", "3mf", "ifc", "stp", "bim"
+		"3d",
+		"viewer",
+		"obj",
+		"3ds",
+		"stl",
+		"ply",
+		"gltf",
+		"glb",
+		"off",
+		"3dm",
+		"fbx",
+		"dae",
+		"wrl",
+		"3mf",
+		"ifc",
+		"stp",
+		"bim"
 	],
 	"files": [
 		"source/engine/*",
@@ -48,12 +62,16 @@
 	},
 	"dependencies": {
 		"@simonwep/pickr": "1.8.2",
+		"body-parser": "^1.20.0",
 		"draco3d": "1.5.2",
+		"express": "^4.18.1",
 		"fflate": "0.7.3",
+		"mongoose": "^6.3.6",
+		"mysql": "^2.18.1",
+		"occt-import-js": "0.0.7",
 		"rhino3dm": "7.14.0",
 		"three": "0.140.2",
-		"web-ifc": "0.0.33",
-		"occt-import-js" : "0.0.7"
+		"web-ifc": "0.0.33"
 	},
 	"eslintConfig": {
 		"env": {
@@ -70,7 +88,7 @@
 			"DracoDecoderModule": "readonly",
 			"rhino3dm": "readonly",
 			"WebIFC": "readonly",
-			"occtimportjs" : "readonly"
+			"occtimportjs": "readonly"
 		},
 		"parserOptions": {
 			"ecmaVersion": 12,
@@ -94,7 +112,7 @@
 			"comma-spacing": "error",
 			"prefer-arrow-callback": "error",
 			"quotes": [
-			"error",
+				"error",
 				"single"
 			],
 			"block-scoped-var": "error",

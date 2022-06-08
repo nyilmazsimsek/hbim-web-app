@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Online 3D Viewer Embedded</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <form class="login" id="reg-form">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" id="username" placeholder="User name / Email" required>
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="password" class="login__input" id="password" placeholder="Password" required>
+                    </div>
+                    <button class="button login__submit" type="submit" value="Submit Form">
+                        <span class="button__text">Log In Now</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>
+                </form>
+                <script>
+                    const form = document.getElementById('reg-form');
+                    form.addEventListener("submit", registerUser);
+
+                    async function registerUser(event){
+                        event.preventDefault();
+                        
+                        const username = document.getElementById("username").value;
+                        const password = document.getElementById("password").value;
+
+                        const result = await fetch('/api/register', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type' : 'application/json'
+                            },
+                            body: JSON.stringify({
+                                username,
+                                password
+                            })
+                        }).then((res) => res.json())
+
+                        console.log(result);
+                    }
+                </script>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
